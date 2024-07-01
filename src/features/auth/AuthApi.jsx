@@ -8,14 +8,18 @@ export const signup=async(cred)=>{
         throw error.response.data
     }
 }
-export const login=async(cred)=>{
+
+export const login = async (cred) => {
     try {
-        const res=await axiosi.post("auth/login",cred)
-        return res.data
+        console.log("cred", cred);
+      const res = await axiosi.post("auth/login", cred);
+      console.log("res", res);
+      return res.data;
     } catch (error) {
-        throw error.response.data
+      console.error("Login Error:", error); // Log the entire error response for debugging
+      throw error.response.data; // Ensure `data` exists on `error.response`
     }
-}
+  };
 export const verifyOtp=async(cred)=>{
     try {
         const res=await axiosi.post("auth/verify-otp",cred)
