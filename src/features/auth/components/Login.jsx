@@ -81,13 +81,13 @@ export const Login = () => {
                 <Stack mt={4} spacing={2} width={is480?"95vw":'28rem'} component={'form'} noValidate onSubmit={handleSubmit(handleLogin)}>
 
                     <motion.div whileHover={{y:-5}}>
-                      <TextField fullWidth {...register("email",{required:"Email is required",pattern:{value:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,message:"Enter a valid email"}})} placeholder='Email'/>
+                      <TextField fullWidth {...register("email",{required:"Email is required",pattern:{value:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,message:"Enter a valid email"}})} placeholder='Email' defaultValue='demo@gmail.com'/>
                       {errors.email && <FormHelperText sx={{mt:1}} error>{errors.email.message}</FormHelperText>}
                     </motion.div>
 
                     
                     <motion.div whileHover={{y:-5}}>
-                      <TextField type='password' fullWidth {...register("password",{required:"Password is required"})} placeholder='Password'/>
+                      <TextField type='password' fullWidth {...register("password",{required:"Password is required"})} placeholder='Password' defaultValue='helloWorld@123'/>
                       {errors.password && <FormHelperText sx={{mt:1}} error>{errors.password.message}</FormHelperText>}
                     </motion.div>
                     
